@@ -3,12 +3,10 @@
   <title>User Input</title>
   <h1>Stock Value</h1>
   <h2>Please enter a stock ticker e.g. GOOG, and check desired features.</h2>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css">
 </head>
 <form>
-  <form id='stock_ticker' method='post' action='index'>
+  <form id='stock_ticker' method='post' action='stock_trend'>
   Ticker Symbol: <input type="text" name="tickersym"><br><br>
   <input type="checkbox" name="closingprice" value="cp">Closing Price<br>
   <input type="checkbox" name="adjclosingprice" value="acp">Adjusted Closing Price<br>
