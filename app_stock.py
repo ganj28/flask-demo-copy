@@ -60,6 +60,7 @@ def stock_trend():
 	adjclose = data['Adj_Close'].astype('float')
 
  	p = figure(title="Stock value for"+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
+	p.line(x, open_val, legend="Opening Price", line_width=2, color='lightcoral')
 	if open_val:
 		p.line(x, open_val, legend="Opening Price", line_width=2, color='lightcoral')
 
