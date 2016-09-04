@@ -79,5 +79,5 @@ def stock_trend():
 	return render_template('stock_trend.html', script=script, div=div, ttl=title)
 
 if __name__ == "__main__":
-	app_stock.run(port=33507)
-	#app_stock.run(host='0.0.0.0')
+	#app_stock.run(port=33507)
+	app_stock.run(host='0.0.0.0')
