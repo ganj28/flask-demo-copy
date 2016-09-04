@@ -46,11 +46,11 @@ def stock_trend():
 	data = pd.DataFrame({'date':data_array[:,0],'Open':data_array[:,1], 'Close':data_array[:,4],'Adj_Open':data_array[:,8], 'Adj_Close':data_array[:,11]})
 
 	#get input data
-	open_val = "openingprice" in request.form
+	'''open_val = "openingprice" in request.form
 	close_val = "closingprice" in request.form
 	adj_close_val = "adjclosingprice" in request.form
 	adj_open_val = "adjopeningprice" in request.form
-
+'''
 	#plot
 	x = data['date'].astype('datetime64')
 	close = data['Close'].astype('float')
@@ -59,9 +59,9 @@ def stock_trend():
 	adjclose = data['Adj_Close'].astype('float')
 
  	p = figure(title="Stock value for"+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
-	p.line(x, open_val, legend="Opening Price", line_width=2, color='lightcoral')
-	if open_val:
-		p.line(x, open_val, legend="Opening Price", line_width=2, color='lightcoral')
+	p.line(x, open, legend="Opening Price", line_width=2, color='lightcoral')
+	'''if open_val:
+		p.line(x, open, legend="Opening Price", line_width=2, color='lightcoral')
 
 	if close_val:
 		p.line(x, close, legend="Closing Price", line_width=2, color='lightseagreen')
@@ -74,6 +74,6 @@ def stock_trend():
 
 	script, div = components(p)
 	return render_template('stock_trend.html', script=script, div=div)
-
+'''
 if __name__ == "__main__":
 	app_stock.run(port=33507)
