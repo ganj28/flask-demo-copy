@@ -46,10 +46,10 @@ def stock_trend():
 	data = pd.DataFrame({'date':data_array[:,0],'Open':data_array[:,1], 'Close':data_array[:,4],'Adj_Open':data_array[:,8], 'Adj_Close':data_array[:,11]})
 
 	#get input data
-	open_val = "openingprice" in request.form
-	close_val = "closingprice" in request.form
-	adj_close_val = "adjclosingprice" in request.form
-	adj_open_val = "adjopeningprice" in request.form
+	open_val = request.form.get('openingprice')
+	close_val = request.form.get('closingprice')
+	adj_close_val = request.form.get('adjclosingprice')
+	adj_open_val = request.form.get('adjopeningprice')
 
 	#plot
 	x = data['date'].astype('datetime64')
