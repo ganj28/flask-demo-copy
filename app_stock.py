@@ -11,7 +11,7 @@ from bokeh.embed import components
 app_stock = Flask(__name__)
 
 @app_stock.route('/', methods=['GET','POST'])
-def stock_value():
+def main():
 	if request.method == 'GET':
 		return render_template('ticker_input.html')
 	else:
@@ -20,7 +20,6 @@ def stock_value():
 
 @app_stock.route('/stock_trend', methods=['GET','POST'])
 def stock_trend():
-
 	#build url
 	ticker = request.form['tickersym']
 	ticker = ticker.upper()
@@ -74,7 +73,7 @@ def stock_trend():
 		p.line(x, adjopen, legend="Adj. Opening Price", line_width=2, color='olivedrab')
 
 	script, div = components(p)
-	return render_template('stock_trend.html', script=script, div=div)
+	return render_template('trend.html', script=script, div=div)
 
 if __name__ == "__main__":
 	app_stock.run(port=33507)
