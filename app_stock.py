@@ -53,13 +53,13 @@ def stock_trend():
 '''
 	#plot
 	x = data['date'].astype('datetime64')
-	close = data['Close'].astype('float')
-	open = data['Open'].astype('float')
+	closeprice = data['Close'].astype('float')
+	openprice = data['Open'].astype('float')
 	adjopen = data['Adj_Open'].astype('float')
 	adjclose = data['Adj_Close'].astype('float')
 
  	p = figure(title="Stock value for"+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
-	p.line(x, open, legend="Opening Price", line_width=2, color='lightcoral')
+	p.line(x, openprice, legend="Opening Price", line_width=2, color='lightcoral')
 	'''if open_val:
 		p.line(x, open, legend="Opening Price", line_width=2, color='lightcoral')
 
