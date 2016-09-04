@@ -10,7 +10,7 @@ from bokeh.embed import components
 
 app_stock = Flask(__name__)
 
-@app_stock.route('/stock_value', methods=['GET','POST'])
+@app_stock.route('/', methods=['GET','POST'])
 def stock_value():
 	if request.method == 'GET':
 		return render_template('ticker_input.html')
