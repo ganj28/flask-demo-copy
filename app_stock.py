@@ -22,6 +22,8 @@ def main():
 def stock_trend():
 	#build url
 	ticker = request.form['tickersym']
+	if not ticker:
+		print "Error: Enter Valid ticker symbol."
 	ticker = ticker.upper()
 	url = "https://www.quandl.com/api/v3/datasets/WIKI/"
 	api_url = url + ticker + '.json?'
@@ -57,6 +59,8 @@ def stock_trend():
 	openprice = data['Open'].astype('float')
 	adjopen = data['Adj_Open'].astype('float')
 	adjclose = data['Adj_Close'].astype('float')
+
+ 	p = figure(title="Stock value for "+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
 
 	if open_val:
 		p.line(x, openprice, legend="Opening Price", line_width=2, color='lightcoral')
