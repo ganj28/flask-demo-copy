@@ -23,8 +23,6 @@ def stock_trend():
 
 	#build url
 	ticker = request.form['tickersym']
-	if not ticker:
-		print "Error: Enter a Valid ticker symbol."
 	ticker = ticker.upper()
 	url = "https://www.quandl.com/api/v3/datasets/WIKI/"
 	api_url = url + ticker + '.json?'
