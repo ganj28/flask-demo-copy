@@ -61,10 +61,10 @@ def stock_trend():
  	p = figure(title="Stock value for "+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
 	p.line(x, openprice, legend="Opening Price", line_width=2, color='lightcoral')
 	if open_val:
-		p.line(x, open, legend="Opening Price", line_width=2, color='lightcoral')
+		p.line(x, openprice, legend="Opening Price", line_width=2, color='lightcoral')
 
 	if close_val:
-		p.line(x, close, legend="Closing Price", line_width=2, color='lightseagreen')
+		p.line(x, closeprice, legend="Closing Price", line_width=2, color='lightseagreen')
 
 	if adj_close_val:
 		p.line(x, adjclose, legend="Adj. Closing Price", line_width=2, color='gold')

@@ -3,6 +3,13 @@
     <link rel="stylesheet" href="//cdn.pydata.org/bokeh/release/bokeh-0.12.1.min.css" type="text/css" />
     <script type="text/javascript" src="//cdn.pydata.org/bokeh/release/bokeh-0.12.1.min.js"></script>
     {{ script | safe }}
+    <button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+   window.history.back();
+}
+</script>
 </head>
 <body>
     <div class=page>
