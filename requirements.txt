@@ -9,4 +9,3 @@ simplejson==3.8.0
 python-dateutil==1.5
 pandas==0.18.1
 bokeh==0.12.1
-psybopg2==2.5.4
