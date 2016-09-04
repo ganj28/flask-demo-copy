@@ -5,7 +5,8 @@ from dateutil.relativedelta import *
 import datetime
 import pandas as pd
 import numpy as np
-from bokeh.plotting import figure, output_file, show
+#from bokeh.plotting import figure, output_file, show
+import bokeh.plotting as bp
 from bokeh.embed import components
 
 app_stock = Flask(__name__)
@@ -61,7 +62,7 @@ def stock_trend():
 	adjopen = data['Adj_Open'].astype('float')
 	adjclose = data['Adj_Close'].astype('float')
 
- 	p = figure(title="Stock value for"+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
+ 	p = bp.figure(title="Stock value for"+ '' + ticker, x_axis_label='Date', y_axis_label='Stock Price', x_axis_type="datetime")
 	if open_val:
 		p.line(x, open_val, legend="Opening Price", line_width=2, color='lightcoral')
 
@@ -78,4 +79,4 @@ def stock_trend():
 	return render_template('stock_trend.html', script=script, div=div)
 
 if __name__ == "__main__":
-	app_stock.run(host='0.0.0.0')
+	app_stock.run(port=33507)
