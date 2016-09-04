@@ -5,8 +5,8 @@ from dateutil.relativedelta import *
 import datetime
 import pandas as pd
 import numpy as np
-#from bokeh.plotting import figure, output_file, show
-#from bokeh.embed import components
+from bokeh.plotting import figure, output_file, show
+from bokeh.embed import components
 
 app_stock = Flask(__name__)
 
