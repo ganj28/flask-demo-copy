@@ -28,7 +28,7 @@ def stock_trend():
 
 	#for last month
 	end_date = datetime.date.today()
-	start_date = end_date - dateutil.relativedelta.relativedelta(months=1)
+	start_date = end_date - relativedelta(months=1)
 	start_date = start_date.strftime('%Y/%m/%d')
 	end_date = end_date.strftime('%Y/%m/%d')
 
@@ -73,7 +73,7 @@ def stock_trend():
 		p.line(x, adjopen, legend="Adj. Opening Price", line_width=2, color='olivedrab')
 '''
 	script, div = components(p)
-	return render_template('ticker_input.html', script=script, div=div)
+	return render_template('stock_trend.html', script=script, div=div)
 
 if __name__ == "__main__":
 	app_stock.run(port=33507)
